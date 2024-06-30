@@ -1,0 +1,30 @@
+model:
+  class_path: lcap.methods.param.ParameterEstimator
+  init_args:
+    lr: 0.0001
+    num_instances: 63
+    num_presets: 10
+    max_epochs: 100
+    weight_decay: 0.0001
+    
+    encoder:
+      class_path: lcap.models.gcn.DeepGCN
+      init_args:
+        mel_bins: 128
+        classes_num: 128
+        in_channels: 2
+        k: 9
+        conv: mr
+        act: gelu
+        bias: True
+        dropout: 0.0
+        use_dilation: True
+        epsilon: 0.2
+        use_stochastic: False
+        drop_path: 0.1
+        embed_dim: 96
+        model_size: m
+        norm: batch
+        use_stdnorm: True
+        use_batchnor: True
+        num_frames: frames

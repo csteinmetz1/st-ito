@@ -1,0 +1,22 @@
+data:
+  class_path: lcap.dataset_style.StyleTransferDataModule
+  init_args:
+    train_root_dirs: 
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/musdb18-vst3-style
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/enst-drums-vst3-style
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/fsd50k-vst3-style
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/guitarset-vst3-style
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/librispeech-vst3-style
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/medley-solos-db-vst3-style
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/mtg-jamendo-vst3-style 
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/ursing-vst3-style 
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/daps-vst3-style
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/opensinger-vst3-style/
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/vocalset-vst3-style/
+    val_root_dirs:
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/vctk-vst3-style/
+    batch_size: 32
+    num_workers: 8
+    length: 262144
+    pin_memory: True
+    persistent_workers: True

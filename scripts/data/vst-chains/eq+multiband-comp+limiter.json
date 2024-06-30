@@ -1,0 +1,41 @@
+{
+    "ZamEQ2": {
+        "vst_filepath": "plugins/valid/ZamEQ2.vst3",
+        "num_params": null,
+        "num_channels": 1,
+        "fixed_parameters": {
+            "buffer_size_frames": 0.03125,
+            "sample_rate_frames": 0.11484374850988388,
+            "current_program": 0,
+            "peaks_on": 0
+        }
+    },
+    "ZaMultiCompX2": {
+        "vst_filepath": "plugins/valid/ZaMultiCompX2.vst3",
+        "num_params": null,
+        "num_channels": 2,
+        "fixed_parameters": {
+            "buffer_size_frames": 0.03125,
+            "sample_rate_frames": 0.11484374850988388,
+            "current_program": 0,
+            "zamcomp_1_on": 1.0,
+            "zamcomp_2_on": 1.0,
+            "zamcomp_3_on": 1.0,
+            "listen_1": 0.0,
+            "listen_2": 0.0,
+            "listen_3": 0.0,
+            "detection_max_avg": 0.0
+        }
+    },
+    "ZaMaximX2": {
+        "vst_filepath": "plugins/valid/ZaMaximX2.vst3",
+        "num_params": null,
+        "num_channels": 2,
+        "fixed_parameters": {
+            "buffer_size_frames": 0.03125,
+            "sample_rate_frames": 0.11484374850988388,
+            "current_program": 0,
+            "latency_frames": 0.012500000186264515
+        }
+    }
+}

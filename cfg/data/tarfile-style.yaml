@@ -1,0 +1,27 @@
+data:
+  class_path: lcap.dataset.dataset_style.StyleTransferTarfileDataModule
+  init_args:
+    train_tarfiles: 
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/guitarset-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/musdb18-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/fsd50k-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/librispeech-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/ursing-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/idmt-drums-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/idmt-piano-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/mtg-jamendo-vst3-style.tar
+    val_tarfiles:
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/guitarset-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/musdb18-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/fsd50k-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/librispeech-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/ursing-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/idmt-drums-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/idmt-piano-vst3-style.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/style-eq+multiband-comp+limiter/mtg-jamendo-vst3-style.tar
+    on_the_fly: False
+    batch_size: 64
+    num_workers: 8
+    length: 131072
+    pin_memory: True
+    persistent_workers: True

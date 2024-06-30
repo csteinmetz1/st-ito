@@ -1,0 +1,80 @@
+.player {
+    width: 100%;
+}
+
+.passage {
+    width: 100px;
+    font-weight: 600;
+}
+
+.params {
+    font-weight: 400;
+    margin: 0;
+}
+
+.table {
+    table-layout: fixed;
+    vertical-align: middle;
+}
+
+.table td {
+    vertical-align: middle !important;
+}
+
+.abstract {
+    margin: 0;
+    max-width: 60%;
+    margin: 0 auto !important;
+    float: none !important;
+}
+
+.noisy {
+    color: rgb(172, 172, 172);
+    font-weight: 600;
+}
+
+
+.tape-it {
+    color: rgb(51, 94, 148);
+    font-weight: 600;
+}
+
+.tape-it-stage1 {
+    color: rgb(141, 185, 243);
+    font-weight: 600;
+}
+
+.hdemucs {
+    color: rgb(222, 78, 94);
+    font-weight: 600;
+}
+
+.hdemucs-dns {
+    color: rgb(243, 178, 98);
+    font-weight: 600;
+}
+
+.izotope {
+    color: rgb(151, 217, 167);
+    font-weight: 600;
+}
+
+.adobe {
+    color: rgb(89, 146, 54);
+    font-weight: 600;
+}
+
+.deepfilternet2 {
+    color: rgb(89, 146, 54);
+    font-weight: 600;
+}
+
+
+.detail {
+    font-size: small;
+    font-weight: 500;
+}
+
+.btn {
+    border-radius: 20px;
+}

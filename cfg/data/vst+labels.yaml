@@ -1,0 +1,49 @@
+data:
+  class_path: lcap.dataset.dataset_param.PluginTarfileDataModule
+  init_args:
+    train_tarfiles: 
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/musdb18-vst3-presets.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/mtg-jamendo-vst3-presets.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/ursing-vst3-presets.tar
+      #- /import/c4dm-datasets-ext/lcap-datasets/20k/enst-drums-vst3-presets.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/fsd50k-vst3-presets.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/librispeech-vst3-presets.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/medley-solos-db-vst3-presets.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/guitarset-vst3-presets.tar
+    val_tarfiles:
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/musdb18-vst3-presets.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/mtg-jamendo-vst3-presets.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/ursing-vst3-presets.tar
+      #- /import/c4dm-datasets-ext/lcap-datasets/20k/enst-drums-vst3-presets.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/fsd50k-vst3-presets.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/librispeech-vst3-presets.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/medley-solos-db-vst3-presets.tar
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/guitarset-vst3-presets.tar
+    train_labels:
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/musdb18-vst3-presets-labels.pt
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/mtg-jamendo-vst3-presets-labels.pt
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/ursing-vst3-presets-labels.pt
+      #- /import/c4dm-datasets-ext/lcap-datasets/20k/enst-drums-vst3-presets-labels.pt
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/fsd50k-vst3-presets-labels.pt
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/librispeech-vst3-presets-labels.pt
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/medley-solos-db-vst3-presets-labels.pt
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/guitarset-vst3-presets-labels.pt
+    val_labels:
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/musdb18-vst3-presets-labels.pt
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/mtg-jamendo-vst3-presets-labels.pt
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/ursing-vst3-presets-labels.pt
+      #- /import/c4dm-datasets-ext/lcap-datasets/20k/enst-drums-vst3-presets-labels.pt
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/fsd50k-vst3-presets-labels.pt
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/librispeech-vst3-presets-labels.pt
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/medley-solos-db-vst3-presets-labels.pt
+      - /import/c4dm-datasets-ext/lcap-datasets/20k/guitarset-vst3-presets-labels.pt
+    plugin_json: plugins/valid_plugins.json
+    batch_size: 16
+    num_workers: 8
+    length: 262144
+    num_train_examples: 140000
+    num_val_examples: 2000
+    num_test_examples: 2000
+    pin_memory: True
+    persistent_workers: True
+    

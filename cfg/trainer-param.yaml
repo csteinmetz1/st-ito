@@ -1,0 +1,33 @@
+seed_everything: true
+
+trainer:
+  precision: 32
+  num_sanity_val_steps: 32
+  check_val_every_n_epoch: 5
+  accumulate_grad_batches: 1
+  max_epochs: 250
+  strategy: ddp_find_unused_parameters_true
+  default_root_dir: /import/c4dm-datasets-ext/lcap/param # dir needs to already exist
+  logger:
+    class_path: pytorch_lightning.loggers.WandbLogger
+    init_args:
+      project: lcap-param
+      log_model: false
+      save_dir: /import/c4dm-datasets-ext/lcap/param
+  callbacks:
+    - class_path: pytorch_lightning.callbacks.ModelCheckpoint
+      init_args:
+        # dirpath: logs/checkpoints
+        save_last: true
+        save_top_k: 1
+        monitor: val_loss
+        filename: "{epoch}-{step}"
+    - class_path: pytorch_lightning.callbacks.ModelSummary
+      init_args:
+        max_depth: 2
+    - class_path: pytorch_lightning.callbacks.LearningRateMonitor
+    - class_path: lcap.callbacks.MoveConfigCallback
+      init_args:
+        project_name: lcap-param
+    - class_path: lcap.callbacks.ConfusionMatrixCallback
+  # enable_checkpointing: true

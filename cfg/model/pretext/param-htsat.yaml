@@ -1,0 +1,37 @@
+model:
+  class_path: lcap.methods.param.ParameterEstimator
+  init_args:
+    lr: 0.0001
+    num_instances: 63
+    num_presets: 10
+    max_epochs: 100
+    weight_decay: 0.0001
+    
+    encoder:
+      class_path: lcap.models.htast.HTSAT
+      init_args:
+        spec_size: 256
+        sample_rate: 48000
+        window_size: 2048
+        hop_size: 512
+        mel_bins: 128
+        fmin: 20.0
+        fmax: 4000.0
+        embed_dim: 512
+        patch_size: 16
+        patch_stride: [4, 4]
+        internal_embed_dim: 96
+        in_channels: 1
+        patch_window_size: 8
+        depths: [2, 2, 6, 2]
+        num_heads: [4, 8, 16, 32]
+        qkv_bias: True
+        drop_rate: 0.0
+        attn_drop_rate: 0.0
+        drop_path_rate: 0.1
+        patch_norm: True
+        mlp_ratio: 4.0
+        norm_before_mlp: ln
+        use_checkpoint: False
+        use_batchnorm: True
+        use_stdnorm: True
