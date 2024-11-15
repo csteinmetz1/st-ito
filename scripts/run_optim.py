@@ -426,6 +426,9 @@ if __name__ == "__main__":
 
             plugin["num_params"] = num_params
             plugin["instance"] = plugin_instance
+            plugin["parameter_names"] = [
+                name for name, _ in plugin_instance.parameters.items()
+            ]
             total_num_params += num_params
 
             # create vector of initial parameter values
