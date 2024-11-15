@@ -510,13 +510,17 @@ def get_param_embeds(
 
 def load_param_model(ckpt_path: str = None, use_gpu: bool = False):
 
-    if ckpt_path is None: # look in tmp direcory
+    if ckpt_path is None:  # look in tmp direcory
         ckpt_path = os.path.join(os.getcwd(), "tmp", "afx-rep.ckpt")
         os.makedirs("tmp", exist_ok=True)
         if not os.path.isfile(ckpt_path):
             # download from huggingfacehub
-            os.system("wget -O tmp/afx-rep.ckpt https://huggingface.co/csteinmetz1/afx-rep/resolve/main/afx-rep.ckpt")
-            os.system("wget -O tmp/config.yaml https://huggingface.co/csteinmetz1/afx-rep/resolve/main/config.yaml")
+            os.system(
+                "wget -O tmp/afx-rep.ckpt https://huggingface.co/csteinmetz1/afx-rep/resolve/main/afx-rep.ckpt"
+            )
+            os.system(
+                "wget -O tmp/config.yaml https://huggingface.co/csteinmetz1/afx-rep/resolve/main/config.yaml"
+            )
 
     config_path = os.path.join(os.path.dirname(ckpt_path), "config.yaml")
 
@@ -526,6 +530,7 @@ def load_param_model(ckpt_path: str = None, use_gpu: bool = False):
     encoder_configs = config["model"]["init_args"]["encoder"]
 
     module_path, class_name = encoder_configs["class_path"].rsplit(".", 1)
+    module_path = module_path.replace("lcap", "st_ito")
     module = import_module(module_path)
     model = getattr(module, class_name)(**encoder_configs["init_args"])
 
