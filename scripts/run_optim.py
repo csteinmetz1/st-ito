@@ -610,7 +610,7 @@ if __name__ == "__main__":
             )
 
             output_audio = result["output_audio"]
-            param_dict = result["param_dict"]
+            param_dict = result["params"]
             fopt = result["fopt"]
             fval_history = result["fval_history"]
             wopt_history = result["wopt_history"]
