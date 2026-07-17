@@ -70,6 +70,78 @@
 }
 
 
+.input {
+    color: rgb(108, 117, 125);
+    font-weight: 600;
+}
+
+.reference {
+    color: rgb(51, 94, 148);
+    font-weight: 600;
+}
+
+.rule-based {
+    color: rgb(243, 178, 98);
+    font-weight: 600;
+}
+
+.random {
+    color: rgb(172, 172, 172);
+    font-weight: 600;
+}
+
+.deepafx-st {
+    color: rgb(222, 78, 94);
+    font-weight: 600;
+}
+
+.deepafx-st-plus {
+    color: rgb(151, 217, 167);
+    font-weight: 600;
+}
+
+.st-ito {
+    color: rgb(89, 146, 54);
+    font-weight: 600;
+}
+
+.oracle {
+    color: rgb(51, 51, 51);
+    font-weight: 600;
+}
+
+.audio-table td {
+    padding: 4px;
+}
+
+.play-btn {
+    --progress: 0%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #adb5bd;
+    background-color: #fff;
+    /* fill from the bottom as the file plays */
+    background-image: linear-gradient(to top, rgba(89, 146, 54, 0.35) var(--progress), transparent var(--progress));
+    color: #212529;
+    font-size: 1.2rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.play-btn:hover {
+    border-color: #212529;
+}
+
+.play-btn.playing {
+    border-color: rgb(89, 146, 54);
+    color: rgb(89, 146, 54);
+}
+
 .detail {
     font-size: small;
     font-weight: 500;
@@ -77,4 +149,64 @@
 
 .btn {
     border-radius: 20px;
+}
+
+.award-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #7a5901;
+    background-color: #fff8e1;
+    border: 1px solid #f0d264;
+    border-radius: 20px;
+}
+
+.award-badge .bi-trophy-fill {
+    color: #d4a017;
+}
+
+.award-badge a {
+    color: #7a5901;
+    text-decoration: underline;
+}
+
+.citation-block {
+    position: relative;
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+}
+
+.citation-block pre {
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+}
+
+.citation-block code {
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #24292f;
+    white-space: pre;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
+    color: #57606a;
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.copy-btn:hover {
+    color: #24292f;
+    background-color: #f3f4f6;
 }

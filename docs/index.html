@@ -35,17 +35,21 @@
 
                 </p>
                 <p class="m-1"></p>Centre for Digital Music, Queen Mary University of London</p>
+                <p class="mt-3">
+                    <span class="award-badge"><i class="bi bi-trophy-fill"></i> Best Paper Award at <a
+                            href="https://c4dm.eecs.qmul.ac.uk/news/2024-11-16.ISMIR-2024_paper_awards/">ISMIR
+                            2024</a></span>
+                </p>
                 <div class="container">
                     <div class="col-sm-12">
                         <div class="mt-4 m-3">
 
-                            <a class="btn btn-outline-dark" href="" type="button">
-                                <i class="bi bi-volume-up"></i> huggingface Space/a>
-                            <a class="btn btn-outline-dark" href="https://arxiv.org/" type="button"><i
+                            <a class="btn btn-outline-dark" href="https://arxiv.org/abs/2410.21233" type="button"><i
                                     class="bi bi-newspaper"></i>
                                 Paper</a>
-                            <a class="btn btn-outline-dark" href="" type="button"> <i class="bi bi-camera-reels"></i>
-                                Video</a>
+                            <a class="btn btn-outline-dark" href="https://github.com/csteinmetz1/st-ito"
+                                type="button"> <i class="bi bi-github"></i>
+                                Code</a>
                         </div>
 
                     </div>
@@ -57,11 +61,9 @@
 
     <div class="container">
         <div class="section mt-5 mb-5 text-center">
-            <iframe width="672" height="378"
-                src="https://www.youtube-nocookie.com/embed/vyQxEknv0Uo?si=nOxh9yVaGC3ddQ8P"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+            <iframe width="672" height="418"
+                src="https://docs.google.com/presentation/d/1-6Ein1pLDb1nIPX_bcWODWsVj27-ID5urtVZPi4sHWg/embed?start=false&loop=false&delayms=3000"
+                title="ST-ITO slides" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="section mt-5 mb-5">
             <div class="abstract">
@@ -82,181 +84,493 @@
         </div>
 
         <div class="section mb-5">
-            <h2>Citation</h2> 
+            <h2>Citation</h2>
             <hr>
-            <div style="background-color: #e9ecef;">
-                <pre>
-                <code>
-    @inproceedings{steinmetz2024stito,
-        title={{ST-ITO}: Controlling audio effects for style transfer with inference-time optimization},
-        author={Steinmetz, Christian J. and Singh, Shubhr and Comunità, Marco and Ibnyahya, Ilias 
-                and Yuan, Shanxin and Benetos, Emmanouil and Reiss, Joshua D.},
-        booktitle={Preprint},
-        year={2024}
-    }</code>
-                </pre>
+            <div class="citation-block">
+                <button id="copy-citation-btn" class="copy-btn" type="button" onclick="copyCitation()"
+                    aria-label="Copy citation to clipboard">
+                    <i class="bi bi-clipboard"></i> Copy
+                </button>
+                <pre><code id="citation-text">@inproceedings{steinmetz2024stito,
+    title     = {{ST-ITO}: Controlling Audio Effects for Style Transfer with Inference-Time Optimization},
+    author    = {Steinmetz, Christian J. and Singh, Shubhr and Comunit{\`a}, Marco and Ibnyahya, Ilias and Yuan, Shanxin and Benetos, Emmanouil and Reiss, Joshua D.},
+    booktitle = {Proceedings of the 25th International Society for Music Information Retrieval Conference},
+    pages     = {661--668},
+    year      = {2024},
+}</code></pre>
             </div>
         </div>
 
         <div class="section">
             <h2>Audio Examples</h2>
             <hr>
-            <h3>Real-world style transfer</h3>
+            <h3>Style transfer listening test examples</h3>
             <div class="mb-5">
-                <p> </p>
+                <p>Examples from the perceptual listening study. For each example, the goal is to process the
+                    input recording so that it matches the production style of the reference recording (which contains
+                    different content). The Oracle uses the same effect chain as was used to create the reference.</p>
             </div>
 
-            <table class="table table-sm text-center" style="vertical-align: middle;">
+            <table class="table table-sm text-center audio-table" style="vertical-align: middle;">
                 <tr>
                     <th class="passage">Name</th>
                     <th> <span class="input">Input</span> <br> <span class="detail"></span></th>
-                    <th> <span class="">Random (Pedalboard)</span> <br> <span class="detail"></span> </th>
-                    <th> <span class="">Random (VST)</span> <br> <span class="detail"></span> </th>
+                    <th> <span class="reference">Reference</span> <br> <span class="detail"></span></th>
+                    <th> <span class="rule-based">Rule-Based</span> <br> <span class="detail"></span></th>
+                    <th> <span class="random">Random (Pedalboard)</span> <br> <span class="detail"></span></th>
+                    <th> <span class="random">Random (VST)</span> <br> <span class="detail"></span></th>
                     <th> <span class="deepafx-st">DeepAFx-ST</span> <br> <span class="detail">(Steinmetz et al., 2022)</span></th>
-                    <th> <span class="deepafx-st+">DeepAFx-ST+</span> <br> <span class="detail"></span></th>
-                    <th> <span class="st-ito-vst">SI-ITO (Pedalboard</span> <br> <span class="detail">(ours)</span></th>
-                    <th> <span class="st-ito-vst">SI-ITO (VST)</span> <br> <span class="detail">(ours)</span></th>
+                    <th> <span class="deepafx-st-plus">DeepAFx-ST+</span> <br> <span class="detail"></span></th>
+                    <th> <span class="st-ito">ST-ITO (Pedalboard)</span> <br> <span class="detail">(ours)</span></th>
+                    <th> <span class="st-ito">ST-ITO (VST)</span> <br> <span class="detail">(ours)</span></th>
+                    <th> <span class="oracle">Oracle</span> <br> <span class="detail"></span></th>
                 </tr>
                 <tr>
-                    <td class="passage">AcGtr + Vocal 1<p class="params"></p>
+                    <td class="passage">S1: Small Space<p class="params"></p>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/actgtr-pretty-darn/acgtr-pretty-darn.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S1-small-space/input.mp3"
+                            aria-label="Play S1: Small Space - Input">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/actgtr-pretty-darn/acgtr-pretty-darn-adobe.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S1-small-space/reference.mp3"
+                            aria-label="Play S1: Small Space - Reference">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/actgtr-pretty-darn/acgtr-pretty-darn-deepfilternet2.wav"
-                                type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S1-small-space/rule-based.mp3"
+                            aria-label="Play S1: Small Space - Rule-Based">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/actgtr-pretty-darn/acgtr-pretty-darn-tape-it.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="passage">Classical Guitar<p class="params"></p>
+                        <button class="play-btn" data-src="audio/S1-small-space/random-pedalboard.mp3"
+                            aria-label="Play S1: Small Space - Random (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/classical-gtr/classical-gtr.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S1-small-space/random-vst.mp3"
+                            aria-label="Play S1: Small Space - Random (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/classical-gtr/classical-gtr-adobe.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S1-small-space/deepafx-st.mp3"
+                            aria-label="Play S1: Small Space - DeepAFx-ST">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/classical-gtr/classical-gtr-deepfilternet2.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S1-small-space/deepafx-st+.mp3"
+                            aria-label="Play S1: Small Space - DeepAFx-ST+">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/classical-gtr/classical-gtr-tape-it.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="passage">AcGtr<p class="params"></p>
+                        <button class="play-btn" data-src="audio/S1-small-space/st-ito-pedalboard.mp3"
+                            aria-label="Play S1: Small Space - ST-ITO (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/acgtr-hozier/acgtr-hozier.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S1-small-space/st-ito-vst.mp3"
+                            aria-label="Play S1: Small Space - ST-ITO (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/acgtr-hozier/acgtr-hozier-adobe.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                            <source src="audio/se/acgtr-hozier/acgtr-hozier-deepfilternet2.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls class="player">
-                            <source src="audio/se/acgtr-hozier/acgtr-hozier-tape-it.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S1-small-space/oracle.mp3"
+                            aria-label="Play S1: Small Space - Oracle">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                 </tr>
                 <tr>
-                    <td class="passage">AcGtr + Vocal 2<p class="params"></p>
+                    <td class="passage">S2: Lowpass<p class="params"></p>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/dont-think-twice/dont-think-twice.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S2-lowpass/input.mp3"
+                            aria-label="Play S2: Lowpass - Input">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/dont-think-twice/dont-think-twice-adobe.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S2-lowpass/reference.mp3"
+                            aria-label="Play S2: Lowpass - Reference">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/dont-think-twice/dont-think-twice-deepfilternet2.wav"
-                                type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S2-lowpass/rule-based.mp3"
+                            aria-label="Play S2: Lowpass - Rule-Based">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/dont-think-twice/dont-think-twice-tape-it.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S2-lowpass/random-pedalboard.mp3"
+                            aria-label="Play S2: Lowpass - Random (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/S2-lowpass/random-vst.mp3"
+                            aria-label="Play S2: Lowpass - Random (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/S2-lowpass/deepafx-st.mp3"
+                            aria-label="Play S2: Lowpass - DeepAFx-ST">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/S2-lowpass/deepafx-st+.mp3"
+                            aria-label="Play S2: Lowpass - DeepAFx-ST+">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/S2-lowpass/st-ito-pedalboard.mp3"
+                            aria-label="Play S2: Lowpass - ST-ITO (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/S2-lowpass/st-ito-vst.mp3"
+                            aria-label="Play S2: Lowpass - ST-ITO (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/S2-lowpass/oracle.mp3"
+                            aria-label="Play S2: Lowpass - Oracle">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                 </tr>
                 <tr>
-                    <td class="passage">Jazz Piano<p class="params"></p>
+                    <td class="passage">S3: Distortion<p class="params"></p>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/bill-evans/bill-evans-intro.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S3-distortion/input.mp3"
+                            aria-label="Play S3: Distortion - Input">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/bill-evans/bill-evans-intro-adobe.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S3-distortion/reference.mp3"
+                            aria-label="Play S3: Distortion - Reference">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/bill-evans/bill-evans-intro-deepfilternet2.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S3-distortion/rule-based.mp3"
+                            aria-label="Play S3: Distortion - Rule-Based">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                     <td>
-                        <audio controls class="player">
-                            <source src="audio/se/bill-evans/bill-evans-intro-tape-it.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <button class="play-btn" data-src="audio/S3-distortion/random-pedalboard.mp3"
+                            aria-label="Play S3: Distortion - Random (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/S3-distortion/random-vst.mp3"
+                            aria-label="Play S3: Distortion - Random (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/S3-distortion/deepafx-st.mp3"
+                            aria-label="Play S3: Distortion - DeepAFx-ST">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/S3-distortion/deepafx-st+.mp3"
+                            aria-label="Play S3: Distortion - DeepAFx-ST+">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/S3-distortion/st-ito-pedalboard.mp3"
+                            aria-label="Play S3: Distortion - ST-ITO (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/S3-distortion/st-ito-vst.mp3"
+                            aria-label="Play S3: Distortion - ST-ITO (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/S3-distortion/oracle.mp3"
+                            aria-label="Play S3: Distortion - Oracle">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">V1: Lowpass<p class="params"></p>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V1-lowpass/input.mp3"
+                            aria-label="Play V1: Lowpass - Input">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V1-lowpass/reference.mp3"
+                            aria-label="Play V1: Lowpass - Reference">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V1-lowpass/rule-based.mp3"
+                            aria-label="Play V1: Lowpass - Rule-Based">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V1-lowpass/random-pedalboard.mp3"
+                            aria-label="Play V1: Lowpass - Random (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V1-lowpass/random-vst.mp3"
+                            aria-label="Play V1: Lowpass - Random (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V1-lowpass/deepafx-st.mp3"
+                            aria-label="Play V1: Lowpass - DeepAFx-ST">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V1-lowpass/deepafx-st+.mp3"
+                            aria-label="Play V1: Lowpass - DeepAFx-ST+">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V1-lowpass/st-ito-pedalboard.mp3"
+                            aria-label="Play V1: Lowpass - ST-ITO (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V1-lowpass/st-ito-vst.mp3"
+                            aria-label="Play V1: Lowpass - ST-ITO (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V1-lowpass/oracle.mp3"
+                            aria-label="Play V1: Lowpass - Oracle">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">V2: Large Space<p class="params"></p>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V2-large-space/input.mp3"
+                            aria-label="Play V2: Large Space - Input">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V2-large-space/reference.mp3"
+                            aria-label="Play V2: Large Space - Reference">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V2-large-space/rule-based.mp3"
+                            aria-label="Play V2: Large Space - Rule-Based">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V2-large-space/random-pedalboard.mp3"
+                            aria-label="Play V2: Large Space - Random (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V2-large-space/random-vst.mp3"
+                            aria-label="Play V2: Large Space - Random (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V2-large-space/deepafx-st.mp3"
+                            aria-label="Play V2: Large Space - DeepAFx-ST">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V2-large-space/deepafx-st+.mp3"
+                            aria-label="Play V2: Large Space - DeepAFx-ST+">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V2-large-space/st-ito-pedalboard.mp3"
+                            aria-label="Play V2: Large Space - ST-ITO (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V2-large-space/st-ito-vst.mp3"
+                            aria-label="Play V2: Large Space - ST-ITO (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V2-large-space/oracle.mp3"
+                            aria-label="Play V2: Large Space - Oracle">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">V3: Small Space<p class="params"></p>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V3-small-space/input.mp3"
+                            aria-label="Play V3: Small Space - Input">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V3-small-space/reference.mp3"
+                            aria-label="Play V3: Small Space - Reference">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V3-small-space/rule-based.mp3"
+                            aria-label="Play V3: Small Space - Rule-Based">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V3-small-space/random-pedalboard.mp3"
+                            aria-label="Play V3: Small Space - Random (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V3-small-space/random-vst.mp3"
+                            aria-label="Play V3: Small Space - Random (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V3-small-space/deepafx-st.mp3"
+                            aria-label="Play V3: Small Space - DeepAFx-ST">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V3-small-space/deepafx-st+.mp3"
+                            aria-label="Play V3: Small Space - DeepAFx-ST+">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V3-small-space/st-ito-pedalboard.mp3"
+                            aria-label="Play V3: Small Space - ST-ITO (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V3-small-space/st-ito-vst.mp3"
+                            aria-label="Play V3: Small Space - ST-ITO (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V3-small-space/oracle.mp3"
+                            aria-label="Play V3: Small Space - Oracle">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="passage">V4: Delay<p class="params"></p>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V4-delay/input.mp3"
+                            aria-label="Play V4: Delay - Input">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V4-delay/reference.mp3"
+                            aria-label="Play V4: Delay - Reference">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V4-delay/rule-based.mp3"
+                            aria-label="Play V4: Delay - Rule-Based">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V4-delay/random-pedalboard.mp3"
+                            aria-label="Play V4: Delay - Random (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V4-delay/random-vst.mp3"
+                            aria-label="Play V4: Delay - Random (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V4-delay/deepafx-st.mp3"
+                            aria-label="Play V4: Delay - DeepAFx-ST">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V4-delay/deepafx-st+.mp3"
+                            aria-label="Play V4: Delay - DeepAFx-ST+">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V4-delay/st-ito-pedalboard.mp3"
+                            aria-label="Play V4: Delay - ST-ITO (Pedalboard)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V4-delay/st-ito-vst.mp3"
+                            aria-label="Play V4: Delay - ST-ITO (VST)">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="play-btn" data-src="audio/V4-delay/oracle.mp3"
+                            aria-label="Play V4: Delay - Oracle">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
                     </td>
                 </tr>
             </table>
@@ -282,6 +596,65 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
             crossorigin="anonymous"></script>
+        <script>
+            function copyCitation() {
+                const text = document.getElementById("citation-text").innerText;
+                const btn = document.getElementById("copy-citation-btn");
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.innerHTML = '<i class="bi bi-clipboard-check"></i> Copied!';
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="bi bi-clipboard"></i> Copy';
+                    }, 2000);
+                });
+            }
+        </script>
+        <script>
+            (function () {
+                const player = new Audio();
+                let activeBtn = null;
+
+                function setPlaying(btn, playing) {
+                    btn.classList.toggle("playing", playing);
+                    btn.querySelector("i").className = playing ? "bi bi-pause-fill" : "bi bi-play-fill";
+                }
+
+                function clearActive() {
+                    if (activeBtn) {
+                        setPlaying(activeBtn, false);
+                        activeBtn.style.setProperty("--progress", "0%");
+                        activeBtn = null;
+                    }
+                }
+
+                document.querySelectorAll(".play-btn").forEach(function (btn) {
+                    btn.addEventListener("click", function () {
+                        if (activeBtn === btn) {
+                            if (player.paused) {
+                                player.play();
+                            } else {
+                                player.pause();
+                            }
+                            setPlaying(btn, !player.paused);
+                            return;
+                        }
+                        clearActive();
+                        activeBtn = btn;
+                        player.src = btn.dataset.src;
+                        player.play();
+                        setPlaying(btn, true);
+                    });
+                });
+
+                player.addEventListener("timeupdate", function () {
+                    if (activeBtn && player.duration) {
+                        const pct = (player.currentTime / player.duration) * 100;
+                        activeBtn.style.setProperty("--progress", pct + "%");
+                    }
+                });
+
+                player.addEventListener("ended", clearActive);
+            })();
+        </script>
 </body>
 
 </html>
